@@ -1,0 +1,13 @@
+---
+import ContactForm from './preact/ContactForm';
+import { profile } from '../data/profile';
+---
+
+<section class="section-shell scroll-mt-28 py-20" id="contact">
+  <h2 class="mx-auto mb-4 max-w-2xl text-center text-5xl font-bold text-primary md:text-6xl">Contact</h2>
+  <p class="mx-auto mb-10 max-w-3xl text-center text-xl text-slate-300 md:text-2xl">{profile.contactSubtitle}</p>
+
+  <div class="mx-auto w-full max-w-2xl">
+    <ContactForm client:load />
+  </div>
+</section>

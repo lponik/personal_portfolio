@@ -1,0 +1,21 @@
+---
+import About from '../components/react/About';
+import Experience from '../components/react/Experience';
+import Header from '../components/react/Header';
+import Hero from '../components/react/Hero';
+import Projects from '../components/react/Projects';
+import Skills from '../components/react/Skills';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout description="Portfolio website cloned with Astro" title={`${profile.name} | Portfolio`}>
+  <main>
+    <Header client:load />
+    <Hero client:load />
+    <About client:visible />
+    <Experience client:visible />
+    <Skills client:visible />
+    <Projects client:visible />
+  </main>
+</BaseLayout>

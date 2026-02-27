@@ -157,8 +157,25 @@ Drop files in `public/assets/` and update paths in data files (usually `src/data
 
 ## 6. Deployment
 
-After building, deploy the generated `dist/` folder to any static host:
+### GitHub Pages (Configured)
 
-- Vercel
-- GitHub Pages
-- Netlify
+This repo is configured to deploy automatically to GitHub Pages via Actions.
+
+Key config:
+
+- `astro.config.mjs`:
+  - `site: "https://lponik.github.io"`
+  - `base: "/personal_portfolio"`
+- Workflow: `.github/workflows/deploy.yml`
+
+To publish:
+
+1. Push to `main`
+2. In GitHub, go to `Settings -> Pages`
+3. Set `Source` to `GitHub Actions`
+4. Wait for the `Deploy to GitHub Pages` workflow to finish
+5. Live site URL: `https://lponik.github.io/personal_portfolio/`
+
+### Other static hosts
+
+You can also deploy `dist/` to Vercel/Netlify if needed.

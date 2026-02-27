@@ -5,7 +5,8 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://lponik.github.io',
+  base: '/personal_portfolio',
   integrations: [
     react({
       include: ['**/components/react/**'],

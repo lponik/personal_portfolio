@@ -7,9 +7,59 @@ import Projects from '../components/react/Projects';
 import Skills from '../components/react/Skills';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../data/profile';
+
+const siteUrl = 'https://www.loganponik.com';
+const pageTitle = `${profile.name} | Fullstack Developer & CS Student`;
+const pageDescription =
+  'Logan Ponik is a fullstack developer and University of Delaware CS student building AI-powered systems, scalable APIs, and production-grade web applications.';
+const pageKeywords = [
+  'Logan Ponik',
+  'Logan Ponik portfolio',
+  'Logan Ponik developer',
+  'Fullstack Developer',
+  'AI Engineer',
+  'University of Delaware',
+];
+const avatarUrl = new URL(profile.avatarPath, `${siteUrl}/`).toString();
+
+const seoSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: profile.name,
+    url: siteUrl,
+    image: avatarUrl,
+    jobTitle: 'Fullstack Developer',
+    description: pageDescription,
+    email: 'mailto:loganponik@gmail.com',
+    sameAs: [
+      'https://github.com/lponik',
+      'https://www.linkedin.com/in/logan-ponik/',
+      'https://devpost.com/software/nutrify-y1htqm',
+    ],
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'University of Delaware',
+    },
+    knowsAbout: ['Fullstack Development', 'Artificial Intelligence', 'Machine Learning', 'Scalable APIs'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: `${profile.name} Portfolio`,
+    url: siteUrl,
+  },
+];
 ---
 
-<BaseLayout description="Portfolio website cloned with Astro" title={`${profile.name} | Portfolio`}>
+<BaseLayout
+  canonical={siteUrl}
+  description={pageDescription}
+  jsonLd={seoSchema}
+  keywords={pageKeywords}
+  ogImage={avatarUrl}
+  title={pageTitle}
+>
   <main>
     <Header client:load />
     <Hero client:load />

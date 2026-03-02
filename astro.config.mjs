@@ -9,7 +9,7 @@ export default defineConfig({
   base: '/',
   integrations: [
     react({
-      include: ['**/components/react/**'],
+      include: ['**/components/react/**', '**/components/ui/**'],
     }),
     preact({
       include: ['**/components/preact/**'],

@@ -1,15 +1,39 @@
 ---
 import '../styles/global.css';
+import { StarfieldBackground } from '../components/ui/starfield';
 
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string[];
+  canonical?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+  noindex?: boolean;
 }
 
 const {
-  title = 'Portfolio',
-  description = 'Personal portfolio built with Astro, Tailwind, React, and Preact.',
+  title = 'Logan Ponik | Fullstack Developer & CS Student',
+  description = 'Logan Ponik is a fullstack developer and Computer Science student building AI-powered systems, scalable APIs, and production-ready applications.',
+  keywords = [
+    'Logan Ponik',
+    'Logan Ponik portfolio',
+    'Fullstack Developer',
+    'Computer Science Student',
+    'AI Developer',
+    'University of Delaware',
+  ],
+  canonical,
+  ogImage = '/assets/pfp.jpeg',
+  jsonLd,
+  noindex = false,
 } = Astro.props as Props;
+
+const siteUrl = Astro.site?.toString() ?? Astro.url.origin;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).toString();
+const robotsValue = noindex ? 'noindex, nofollow' : 'index, follow';
+const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : null;
 ---
 
 <!doctype html>
@@ -17,16 +41,38 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta content={description} name="description" />
+    <meta content={keywords.join(', ')} name="keywords" />
+    <meta content="Logan Ponik" name="author" />
+    <meta content={robotsValue} name="robots" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href={canonicalUrl} rel="canonical" />
+    <meta content={title} property="og:title" />
+    <meta content={description} property="og:description" />
+    <meta content={canonicalUrl} property="og:url" />
+    <meta content="website" property="og:type" />
+    <meta content={ogImageUrl} property="og:image" />
+    <meta content="Logan Ponik" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content={title} name="twitter:title" />
+    <meta content={description} name="twitter:description" />
+    <meta content={ogImageUrl} name="twitter:image" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Satisfy&family=Ubuntu:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      rel="stylesheet"
+    />
+    {jsonLdString && <script set:html={jsonLdString} type="application/ld+json" />}
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <StarfieldBackground className="pointer-events-none z-0" client:load />
+    <div class="site-content">
+      <slot />
+    </div>
   </body>
 </html>

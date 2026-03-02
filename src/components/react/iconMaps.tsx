@@ -103,36 +103,44 @@ const skillIconMap: Record<string, LucideIcon> = {
   'pen-tool': PenTool,
 };
 
-const projectTechIconMap: Record<string, LucideIcon> = {
-  react: Atom,
-  typescript: FileType2,
-  tailwind: Wind,
-  node: Server,
-  next: Rocket,
-  d3: ChartLine,
-  gsap: MoveRight,
-  mongo: Database,
-  astro: Orbit,
-  preact: Component,
-  firebase: Flame,
-  framer: Activity,
-  zustand: Boxes,
-  mysql: Table,
-  php: FileJson,
-  auth: ShieldCheck,
-  api: Waypoints,
-  figma: PenTool,
-  supabase: Database,
-  fastapi: Waypoints,
-  flask: Flame,
-  javascript: Braces,
-  html: FileCode2,
-  css: Paintbrush,
-  gemini: Zap,
-  python: FileCode2,
-  pytorch: Activity,
-  ml: ChartLine,
-  data: Database,
+type ProjectTechIconData = {
+  className: string;
+  label: string;
+};
+
+const projectTechDeviconMap: Record<string, ProjectTechIconData> = {
+  react: { className: 'devicon-react-original', label: 'React' },
+  typescript: { className: 'devicon-typescript-plain', label: 'TypeScript' },
+  tailwind: { className: 'devicon-tailwindcss-plain', label: 'Tailwind CSS' },
+  node: { className: 'devicon-nodejs-plain', label: 'Node.js' },
+  next: { className: 'devicon-nextjs-plain', label: 'Next.js' },
+  nextjs: { className: 'devicon-nextjs-plain', label: 'Next.js' },
+  d3: { className: 'devicon-d3js-plain', label: 'D3.js' },
+  gsap: { className: 'devicon-javascript-plain', label: 'GSAP' },
+  mongo: { className: 'devicon-mongodb-plain', label: 'MongoDB' },
+  astro: { className: 'devicon-astro-plain', label: 'Astro' },
+  preact: { className: 'devicon-react-original', label: 'Preact' },
+  firebase: { className: 'devicon-firebase-plain', label: 'Firebase' },
+  framer: { className: 'devicon-figma-plain', label: 'Framer Motion' },
+  zustand: { className: 'devicon-react-original', label: 'Zustand' },
+  mysql: { className: 'devicon-mysql-plain', label: 'MySQL' },
+  php: { className: 'devicon-php-plain', label: 'PHP' },
+  auth: { className: 'devicon-jsonwebtokens-plain', label: 'Auth' },
+  api: { className: 'devicon-fastapi-plain', label: 'API' },
+  figma: { className: 'devicon-figma-plain', label: 'Figma' },
+  supabase: { className: 'devicon-supabase-plain', label: 'Supabase' },
+  fastapi: { className: 'devicon-fastapi-plain', label: 'FastAPI' },
+  flask: { className: 'devicon-flask-original', label: 'Flask' },
+  javascript: { className: 'devicon-javascript-plain', label: 'JavaScript' },
+  html: { className: 'devicon-html5-plain', label: 'HTML' },
+  css: { className: 'devicon-css3-plain', label: 'CSS' },
+  gemini: { className: 'devicon-googlecloud-plain', label: 'Gemini' },
+  python: { className: 'devicon-python-plain', label: 'Python' },
+  pytorch: { className: 'devicon-pytorch-original', label: 'PyTorch' },
+  ml: { className: 'devicon-tensorflow-original', label: 'Machine Learning' },
+  scikitlearn: { className: 'devicon-scikitlearn-plain', label: 'Scikit-learn' },
+  sklearn: { className: 'devicon-scikitlearn-plain', label: 'Scikit-learn' },
+  data: { className: 'devicon-pandas-original', label: 'Data' },
 };
 
 export function getBrandIcon(name: string): LucideIcon {
@@ -143,6 +151,6 @@ export function getSkillIcon(name: string): LucideIcon {
   return skillIconMap[name] ?? Cpu;
 }
 
-export function getProjectTechIcon(name: string): LucideIcon {
-  return projectTechIconMap[name] ?? Cpu;
+export function getProjectTechIconData(name: string): ProjectTechIconData | null {
+  return projectTechDeviconMap[name] ?? null;
 }

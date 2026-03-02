@@ -8,13 +8,21 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+    {
+    title: 'Terris',
+    slug: 'terris',
+    description:
+      'A full-stack environmental screening app that computes a transparent, deterministic 0–10 risk score from public geospatial datasets.',
+    liveUrl: 'https://terris-theta.vercel.app/',
+    techIcons: ['nextjs', 'fastapi', 'scikitlearn'],
+  },
   {
     title: 'Foliage (Building)',
     slug: 'foliage',
     description:
       'A full-stack resume-to-portfolio platform that converts uploaded resumes into structured profile content and portfolio-ready pages.',
     liveUrl: 'https://fragile-paradox.vercel.app/home',
-    techIcons: ['next', 'typescript', 'supabase', 'fastapi'],
+    techIcons: ['nextjs', 'supabase', 'fastapi',],
   },
   {
     title: 'Nutrify',
@@ -30,7 +38,7 @@ export const projects: Project[] = [
     description:
       'A binary image classifier that distinguishes my cat from other cats using transfer learning with EfficientNet-B0 and class-weighted loss.',
     liveUrl: 'https://github.com/lponik/Mila-Classifier',
-    techIcons: ['python', 'pytorch', 'ml', 'data'],
+    techIcons: ['python', 'pytorch',],
   },
     {
     title: 'PhishTriage',
@@ -38,7 +46,7 @@ export const projects: Project[] = [
     description:
       ' PhishTriage is an explainable, offline phishing triage CLI for raw .eml files. It’s built to surface suspicious patterns quickly and produce analyst-readable findings with a simple risk score.',
     liveUrl: 'https://github.com/lponik/phishTriage',
-    techIcons: ['python', 'pytorch', 'ml', 'data'],
+    techIcons: ['python',],
   },
 
  

@@ -27,6 +27,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body {
@@ -38,6 +40,13 @@ body {
   background-color: var(--base);
   color: #f8f8ff;
   font-family: 'Poppins', sans-serif;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 .site-content {

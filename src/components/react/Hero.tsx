@@ -97,7 +97,7 @@ export default function Hero() {
 
       <motion.div className="relative mx-auto h-[320px] w-[320px] md:h-[420px] md:w-[420px]" {...revealUp}>
         <div className="absolute inset-0 m-auto h-48 w-48 overflow-hidden rounded-full border border-white/20 bg-cardGradient p-2 shadow-soft md:h-60 md:w-60">
-          <img alt="Profile avatar" className="h-full w-full rounded-full object-cover" src={profile.avatarPath} />
+          <img alt="Profile avatar" className="h-full w-full rounded-full object-cover object-[40%_25%]" src={profile.avatarPath} />
         </div>
 
         <span className="Trail1 absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10">

@@ -13,8 +13,9 @@ export const experience: ExperienceItem[] = [
     location: 'Remote',
     period: 'June 2025 - August 2025',
     highlights: [
-      'Contributed to frontend development of a desktop application using React, Tauri, and Docker, including reintegration of toast notifications from a legacy system.',
-      'Prototyped and implemented a dynamic React Flow interface to visualize system processes in real time, improving usability and team collaboration.',
+      'Developed front-end features for a production desktop app (React, Tauri, Docker), including re-engineering a legacy notification system to restore real-time toast alerts for end users.',
+      'Designed and shipped an interactive real-time flow diagram (React Flow) to visualize system architecture, reducing onboarding friction and improving cross-team alignment during sprint reviews.',
+      'Collaborated in an Agile environment with weekly sprints, contributing to code reviews and maintaining component documentation for a cross-functional engineering team.',
     ],
   },
 ];

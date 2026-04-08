@@ -9,6 +9,8 @@ export default function Projects() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [loopDistance, setLoopDistance] = useState(0);
   const carouselProjects = [...projects, ...projects];
+  const minScrollDuration = 14;
+  const pixelsPerSecond = 60;
 
   useEffect(() => {
     const updateLoopDistance = () => {
@@ -46,7 +48,7 @@ export default function Projects() {
             transition={
               loopDistance > 0
                 ? {
-                    duration: Math.max(22, loopDistance / 36),
+                    duration: Math.max(minScrollDuration, loopDistance / pixelsPerSecond),
                     ease: 'linear',
                     repeat: Infinity,
                   }
@@ -84,6 +86,7 @@ export default function Projects() {
                     <ul className="flex flex-wrap items-center justify-center gap-3">
                       {project.techIcons.map((tech, techIndex) => {
                         const techIconData = getProjectTechIconData(tech);
+                        const TechIcon = techIconData?.icon;
                         const techLabel = techIconData?.label ?? tech.toUpperCase();
                         return (
                           <li
@@ -91,7 +94,13 @@ export default function Projects() {
                             className="relative"
                           >
                             <span className="peer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-100 transition duration-300 group-hover:border-primary/40 group-hover:bg-white/10 group-hover:text-primary">
-                              {techIconData ? (
+                              {TechIcon ? (
+                                <TechIcon
+                                  aria-hidden="true"
+                                  size={18}
+                                  strokeWidth={2.2}
+                                />
+                              ) : techIconData?.className ? (
                                 <i
                                   aria-hidden="true"
                                   className={`${techIconData.className} colored text-[1.15rem] leading-none`}

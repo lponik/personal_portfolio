@@ -15,6 +15,7 @@ export const frameworks: SkillItem[] = [
   { name: 'React' },
   { name: 'Next.js' },
   { name: 'FastAPI' },
+  { name: 'LangChain' },
   { name: 'Node.js' },
   { name: 'Express' },
   { name: 'PyTorch' },

@@ -21,6 +21,7 @@ import {
   Globe,
   HardDrive,
   Instagram,
+  Link2,
   Linkedin,
   Mail,
   MessageCircle,
@@ -104,7 +105,8 @@ const skillIconMap: Record<string, LucideIcon> = {
 };
 
 type ProjectTechIconData = {
-  className: string;
+  className?: string;
+  icon?: LucideIcon;
   label: string;
 };
 
@@ -141,6 +143,7 @@ const projectTechDeviconMap: Record<string, ProjectTechIconData> = {
   scikitlearn: { className: 'devicon-scikitlearn-plain', label: 'Scikit-learn' },
   sklearn: { className: 'devicon-scikitlearn-plain', label: 'Scikit-learn' },
   data: { className: 'devicon-pandas-original', label: 'Data' },
+  langchain: { icon: Link2, label: 'LangChain' },
 };
 
 export function getBrandIcon(name: string): LucideIcon {

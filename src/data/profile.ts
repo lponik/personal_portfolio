@@ -23,7 +23,7 @@ export const profile = {
   greeting: 'Hi! my name is,',
   titleLine: "Fullstack Developer & CS Student",
   subtitleLine: 'Focused on building AI-powered systems, scalable architectures, and production-grade applications.',
-  resumePath: '/assets/Lponik_Resume_2026.docx.pdf',
+  resumePath: '/assets/Lponik_Resume_2026.docx%20(10).pdf',
   avatarPath: '/assets/lponik-headshot.jpg',
   aboutTitle: 'Hey there! 👋🏻',
   aboutParagraphs: [

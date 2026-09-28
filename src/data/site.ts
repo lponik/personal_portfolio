@@ -11,14 +11,14 @@ export const site = {
     "Currently exploring entry-level cloud infrastructure, DevOps, platform, and systems engineering opportunities. I'd love to connect, please feel free to reach out by email!",
   email: 'mailto:loganponik@gmail.com',
   navigation: [
-    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ],
   profileLinks: [
     { label: 'GitHub', href: 'https://github.com/lponik' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/logan-ponik/' },
-    { label: 'Resume', href: '/assets/Lponik_Resume_2026.docx%20(10).pdf', download: true },
+    { label: 'Resume', href: '/assets/LoganPonik.pdf', download: true },
   ],
 } as const;
 
@@ -34,38 +34,38 @@ export const experience = {
 } as const;
 
 export const skillGroups = [
-  { title: 'Infrastructure', skills: ['AWS', 'Terraform', 'Linux', 'Ansible', 'Github Actions'] },
-  { title: 'Containers & Visibility', skills: ['Docker', 'Podman', 'Prometheus', 'Grafana', 'Wireshark'] },
+  { title: 'Infrastructure', skills: ['AWS', 'Terraform', 'Linux', 'Ansible', 'GitHub Actions'] },
+  { title: 'Containers & Observability', skills: ['Docker', 'Podman', 'Prometheus', 'Grafana', 'Wireshark'] },
   { title: 'Development', skills: ['Python', 'React', 'SQL', 'Git'] },
 ] as const;
 
 export const projects = [
   {
+    title: 'AWS Infrastructure with Terraform',
+    description:
+      'Built and deployed a resilient multi-AZ AWS web service with Terraform, private EC2 instances, load balancing, Auto Scaling, and SSM-based administration.',
+    githubUrl: 'https://github.com/lponik/terraform-arch',
+    technologies: ['Terraform', 'AWS', 'VPC', 'EC2', 'ALB', 'Auto Scaling', 'IAM', 'CloudWatch', 'SSM'],
+  },
+  {
+    title: 'Terris',
+    description:
+      'Full-stack geospatial application for exploring proximity to 4,247 EPA sites, featuring a deterministic data pipeline, Terraform-managed AWS infrastructure, and security-gated CI/CD.',
+    githubUrl: 'https://github.com/lponik/Terris',
+    liveUrl: 'https://tryterris.org/',
+    technologies: ['Next.js', 'FastAPI', 'AWS', 'Terraform', 'Docker', 'GitHub Actions', 'NumPy'],
+  },
+    {
     title: 'Rocky Linux Homelab',
     description:
       'Self-managed Rocky Linux environment focused on systems administration, automation, security hardening, networking, and observability.',
     githubUrl: 'https://github.com/lponik/Rocky',
     technologies: ['Rocky Linux', 'Ansible', 'Nginx', 'Podman', 'Prometheus', 'Grafana', 'systemd'],
-  },
-  {
-    title: 'Terraform AWS Infrastructure',
-    description:
-      'Multi-AZ AWS architecture defined with Terraform, currently developed and tested locally with Floci ahead of deployment to AWS',
-    githubUrl: 'https://github.com/lponik/terraform-arch',
-    technologies: ['Terraform', 'AWS', 'VPC', 'EC2', 'ALB', 'Auto Scaling', 'IAM', 'CloudWatch'],
-  },
-  {
-    title: 'Terris',
-    description:
-      'Containerized geospatial application for exploring proximity to EPA Superfund sites and landfills, backed by a deterministic data pipeline and automated CI validation.',
-    githubUrl: 'https://github.com/lponik/Terris',
-    liveUrl: 'https://terris-theta.vercel.app/',
-    technologies: ['Next.js', 'FastAPI', 'NumPy', 'Docker', 'Github Actions'],
-  },
+  }
 ] as const;
 
 export const seo = {
-  title: `${site.name} | Cloud Infrastructure & Linux`,
+  title: `${site.name} | Cloud Infrastructure & Software Development`,
   description:
     'Logan Ponik is a Computer Science graduate and AWS Certified Solutions Architect focused on cloud infrastructure, Linux, Terraform, networking, automation, and reliability.',
   keywords: [
